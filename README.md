@@ -3,7 +3,7 @@ This is example Docker Compose file for running [Taiga](https://taiga.io) projec
 
 ## Basic usage
 1) Clone this repository.
-`git clone --depth=1 -b latest https://github.com/docker-taiga/taiga.git`
+`git clone --depth=1 -b latest https://github.com/slygren/taiga.git`
 2) Adjust hostname, django secret and passwords for postgresql and rabbitmq in `variables.env`.
 2) (Optional) If you want to enable SSL, create `cert` folder and put ssl certificate and key inside. Default names are `fullchain.pem` and `privkey.pem`. This can be changed by adding `CERT_NAME` and `CERT_KEY` environment variables to the service `proxy`. Alternatively, if you use certbot to acquire certificates, point volume `/taiga-cert` of the `proxy` service to the location of certificates, e.g. `/etc/letsencrypt/live/yourdomain.com`.
 4) `docker-compose up`
