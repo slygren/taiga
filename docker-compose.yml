@@ -2,7 +2,7 @@ version: '3'
 
 services:
   back:
-    image: dockertaiga/back
+    image: slygren/back
     container_name: taiga-back
     restart: unless-stopped
     depends_on:
@@ -17,7 +17,7 @@ services:
       - variables.env
 
   front:
-    image: dockertaiga/front
+    image: slygren/front
     container_name: taiga-front
     restart: unless-stopped
     networks:
@@ -39,7 +39,7 @@ services:
       - ./data/db:/var/lib/postgresql/data
 
   rabbit:
-    image: dockertaiga/rabbit
+    image: slygren/rabbit
     container_name: taiga-rabbit
     restart: unless-stopped
     networks:
@@ -48,7 +48,7 @@ services:
       - variables.env
 
   events:
-    image: dockertaiga/events
+    image: slygren/events
     container_name: taiga-events
     restart: unless-stopped
     depends_on:
@@ -59,7 +59,7 @@ services:
       - variables.env
 
   proxy:
-    image: dockertaiga/proxy
+    image: slygren/proxy
     container_name: taiga-proxy
     restart: unless-stopped
     depends_on:
